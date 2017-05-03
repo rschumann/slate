@@ -6,7 +6,7 @@ To obtain all countries:
 
 ```shell
 curl -X GET http://localhost:3000/countries \
--H "SC_API_KEY: Bearer <your-api-key>" \
+-H "SC-API-KEY: Bearer <your-api-key>" \
 -H "Content-Type: application/json"
 ```
 
@@ -306,13 +306,13 @@ Available filters:
 
 ```shell
 curl -X GET http://localhost:3000/countries?sort=name \
--H "SC_API_KEY: Bearer <your-api-key>" \
+-H "SC-API-KEY: Bearer <your-api-key>" \
 -H "Content-Type: application/json"
 ```
 
 ```shell
 curl -X GET http://localhost:3000/countries?sort=-name \
--H "SC_API_KEY: Bearer <your-api-key>" \
+-H "SC-API-KEY: Bearer <your-api-key>" \
 -H "Content-Type: application/json"
 ```
 
@@ -322,7 +322,7 @@ To obtain specific country:
 
 ```shell
 curl -X GET http://localhost:3000/countries/33 \
--H "SC_API_KEY: Bearer <your-api-key>" \
+-H "SC-API-KEY: Bearer <your-api-key>" \
 -H "Content-Type: application/json"
 ```
 
@@ -355,7 +355,7 @@ To create a country, you need to define all of the required fields in the reques
 ```shell
 curl -X POST http://localhost:3000/countries \
 -H "Authorization: Bearer <your-token>" \
--H "SC_API_KEY: Bearer <your-api-key>" \
+-H "SC-API-KEY: Bearer <your-api-key>" \
 -H "Content-Type: application/json" -d \
 '{__
   "country": {
@@ -380,7 +380,7 @@ It accepts the same parameters as the _create country_ endpoint, and you will ne
 ```shell
 curl -X PATCH http://localhost:3000/countries/<country-id> \
 -H "Authorization: Bearer <your-token>" \
--H "SC_API_KEY: Bearer <your-api-key>" \
+-H "SC-API-KEY: Bearer <your-api-key>" \
 -H "Content-Type: application/json"  -d \
 '{__
   "country": {
@@ -400,7 +400,7 @@ You can delete a country! Just send a DELETE request to the endpoint:
 ```shell
 curl -X DELETE http://localhost:3000/countries/<country-id> \
 -H "Authorization: Bearer <your-token>" \
--H "SC_API_KEY: Bearer <your-api-key>" \
+-H "SC-API-KEY: Bearer <your-api-key>" \
 -H "Content-Type: application/json"
 ```
 

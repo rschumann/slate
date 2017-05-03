@@ -6,7 +6,7 @@ To obtain all cities:
 
 ```shell
 curl -X GET http://localhost:3000/cities \
--H "SC_API_KEY: Bearer <your-api-key>" \
+-H "SC-API-KEY: Bearer <your-api-key>" \
 -H "Content-Type: application/json"
 ```
 
@@ -231,13 +231,13 @@ Available filters:
 
 ```shell
 curl -X GET http://localhost:3000/cities?sort=name \
--H "SC_API_KEY: Bearer <your-api-key>" \
+-H "SC-API-KEY: Bearer <your-api-key>" \
 -H "Content-Type: application/json"
 ```
 
 ```shell
 curl -X GET http://localhost:3000/cities?sort=-name \
--H "SC_API_KEY: Bearer <your-api-key>" \
+-H "SC-API-KEY: Bearer <your-api-key>" \
 -H "Content-Type: application/json"
 ```
 
@@ -247,7 +247,7 @@ To obtain specific city:
 
 ```shell
 curl -X GET http://localhost:3000/cities/330 \
--H "SC_API_KEY: Bearer <your-api-key>" \
+-H "SC-API-KEY: Bearer <your-api-key>" \
 -H "Content-Type: application/json"
 ```
 
@@ -278,7 +278,7 @@ To create a city, you need to define all of the required fields in the request b
 ```shell
 curl -X POST http://localhost:3000/cities \
 -H "Authorization: Bearer <your-token>" \
--H "SC_API_KEY: Bearer <your-api-key>" \
+-H "SC-API-KEY: Bearer <your-api-key>" \
 -H "Content-Type: application/json" -d \
 '{__
   "city": {
@@ -303,7 +303,7 @@ It accepts the same parameters as the _create city_ endpoint, and you will need 
 ```shell
 curl -X PATCH http://localhost:3000/cities/<city-id> \
 -H "Authorization: Bearer <your-token>" \
--H "SC_API_KEY: Bearer <your-api-key>" \
+-H "SC-API-KEY: Bearer <your-api-key>" \
 -H "Content-Type: application/json"  -d \
 '{__
   "city": {
@@ -323,7 +323,7 @@ You can delete a city! Just send a DELETE request to the endpoint:
 ```shell
 curl -X DELETE http://localhost:3000/cities/<city-id> \
 -H "Authorization: Bearer <your-token>" \
--H "SC_API_KEY: Bearer <your-api-key>" \
+-H "SC-API-KEY: Bearer <your-api-key>" \
 -H "Content-Type: application/json"
 ```
 

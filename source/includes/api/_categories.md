@@ -10,7 +10,7 @@ A category is a group of categories for specific bussiness area.
 
 ```shell
 curl -X GET http://localhost:3000/categories \
--H "SC_API_KEY: Bearer <your-api-key>" \
+-H "SC-API-KEY: Bearer <your-api-key>" \
 -H "Content-Type: application/json"
 ```
 
@@ -327,7 +327,7 @@ Available filters:
 
 ```shell
 curl -X GET http://localhost:3000/categories-tree \
--H "SC_API_KEY: Bearer <your-api-key>" \
+-H "SC-API-KEY: Bearer <your-api-key>" \
 -H "Content-Type: application/json"
 ```
 
@@ -335,20 +335,20 @@ curl -X GET http://localhost:3000/categories-tree \
 
 ```shell
 curl -X GET http://localhost:3000/categories-tree?type=Solution \
--H "SC_API_KEY: Bearer <your-api-key>" \
+-H "SC-API-KEY: Bearer <your-api-key>" \
 -H "Content-Type: application/json"
 ```
 > To sort solution categories by name:
 
 ```shell
 curl -X GET http://localhost:3000/categories-tree?sort=name \
--H "SC_API_KEY: Bearer <your-api-key>" \
+-H "SC-API-KEY: Bearer <your-api-key>" \
 -H "Content-Type: application/json"
 ```
 
 ```shell
 curl -X GET http://localhost:3000/categories-tree?sort=-name \
--H "SC_API_KEY: Bearer <your-api-key>" \
+-H "SC-API-KEY: Bearer <your-api-key>" \
 -H "Content-Type: application/json"
 ```
 
@@ -358,7 +358,7 @@ curl -X GET http://localhost:3000/categories-tree?sort=-name \
 
 ```shell
 curl -X GET http://localhost:3000/categories/3 \
--H "SC_API_KEY: Bearer <your-api-key>" \
+-H "SC-API-KEY: Bearer <your-api-key>" \
 -H "Content-Type: application/json"
 ```
 > Example response:
@@ -400,7 +400,7 @@ Remember — the response is jsonapi format and only accessible by admin or publ
 
 ```shell
 curl -X GET http://localhost:3000/categories-tree \
--H "SC_API_KEY: Bearer <your-api-key>" \
+-H "SC-API-KEY: Bearer <your-api-key>" \
 -H "Content-Type: application/json"
 ```
 > Example response:
@@ -518,7 +518,7 @@ Remember — the response is jsonapi format
 
 ```shell
 curl -X GET http://localhost:3000/solution-categories \
--H "SC_API_KEY: Bearer <your-api-key>" \
+-H "SC-API-KEY: Bearer <your-api-key>" \
 -H "Content-Type: application/json"
 ```
 
@@ -532,7 +532,7 @@ Remember — the response is jsonapi format
 
 ```shell
 curl -X GET http://localhost:3000/solution-categories/126 \
--H "SC_API_KEY: Bearer <your-api-key>" \
+-H "SC-API-KEY: Bearer <your-api-key>" \
 -H "Content-Type: application/json"
 ```
 
@@ -546,7 +546,7 @@ Remember — the response is jsonapi format
 
 ```shell
 curl -X GET http://localhost:3000/timing-categories \
--H "SC_API_KEY: Bearer <your-api-key>" \
+-H "SC-API-KEY: Bearer <your-api-key>" \
 -H "Content-Type: application/json"
 ```
 
@@ -560,7 +560,7 @@ Remember — the response is jsonapi format
 
 ```shell
 curl -X GET http://localhost:3000/timing-categories/22 \
--H "SC_API_KEY: Bearer <your-api-key>" \
+-H "SC-API-KEY: Bearer <your-api-key>" \
 -H "Content-Type: application/json"
 ```
 
@@ -574,7 +574,7 @@ Remember — the response is jsonapi format
 
 ```shell
 curl -X GET http://localhost:3000/business-model-element-categories \
--H "SC_API_KEY: Bearer <your-api-key>" \
+-H "SC-API-KEY: Bearer <your-api-key>" \
 -H "Content-Type: application/json"
 ```
 
@@ -588,7 +588,7 @@ Remember — the response is jsonapi format
 
 ```shell
 curl -X GET http://localhost:3000/business-model-element-categories/43 \
--H "SC_API_KEY: Bearer <your-api-key>" \
+-H "SC-API-KEY: Bearer <your-api-key>" \
 -H "Content-Type: application/json"
 ```
 
@@ -602,7 +602,7 @@ Remember — the response is jsonapi format
 
 ```shell
 curl -X GET http://localhost:3000/impact-categories \
--H "SC_API_KEY: Bearer <your-api-key>" \
+-H "SC-API-KEY: Bearer <your-api-key>" \
 -H "Content-Type: application/json"
 ```
 
@@ -616,7 +616,7 @@ Remember — the response is jsonapi format
 
 ```shell
 curl -X GET http://localhost:3000/impact-categories/139 \
--H "SC_API_KEY: Bearer <your-api-key>" \
+-H "SC-API-KEY: Bearer <your-api-key>" \
 -H "Content-Type: application/json"
 ```
 
@@ -630,7 +630,7 @@ Remember — the response is jsonapi format
 
 ```shell
 curl -X GET http://localhost:3000/enabling-categories \
--H "SC_API_KEY: Bearer <your-api-key>" \
+-H "SC-API-KEY: Bearer <your-api-key>" \
 -H "Content-Type: application/json"
 ```
 
@@ -644,7 +644,7 @@ Remember — the response is jsonapi format
 
 ```shell
 curl -X GET http://localhost:3000/enabling-categories/113 \
--H "SC_API_KEY: Bearer <your-api-key>" \
+-H "SC-API-KEY: Bearer <your-api-key>" \
 -H "Content-Type: application/json"
 ```
 
@@ -675,7 +675,7 @@ To create a category, you need to define all of the required fields in the reque
 ```shell
 curl -X POST http://localhost:3000/categories \
 -H "Authorization: Bearer <your-token>" \
--H "SC_API_KEY: Bearer <your-api-key>" \
+-H "SC-API-KEY: Bearer <your-api-key>" \
 -H "Content-Type: application/json"  -d \
  '{
    "category": {
@@ -701,7 +701,7 @@ It accepts the same parameters as the _create category_ endpoint, and you will n
 ```shell
 curl -X PATCH http://localhost:3000/categories/<category-id> \
 -H "Authorization: Bearer <your-token>" \
--H "SC_API_KEY: Bearer <your-api-key>" \
+-H "SC-API-KEY: Bearer <your-api-key>" \
 -H "Content-Type: application/json"  -d \
 '{__
   "category": {
@@ -720,7 +720,7 @@ You can delete a category! Just send a DELETE request to the endpoint:
 ```shell
 curl -X DELETE http://localhost:3000/categories/<category-id> \
 -H "Authorization: Bearer <your-token>" \
--H "SC_API_KEY: Bearer <your-api-key>" \
+-H "SC-API-KEY: Bearer <your-api-key>" \
 -H "Content-Type: application/json"
 ```
 
