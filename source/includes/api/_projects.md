@@ -218,6 +218,7 @@ Available filters:
 | Field         | Description           | Type
 | ------------- |:-------------:| -----:|
 | sort          | Sort json response by specific attributes (name, created_at, updated_at) | Text
+| search        | Search in name and solution | Text
 
 
 > To obtain all projects sorted by name:
@@ -238,6 +239,14 @@ curl -X GET http://localhost:3000/projects?sort=-name \
 
 ```shell
 curl -X GET http://localhost:3000/study-cases?sort=name \
+-H "SC-API-KEY: Bearer <your-api-key>" \
+-H "Content-Type: application/json"
+```
+
+> To search study cases sorted by name:
+
+```shell
+curl -X GET http://localhost:3000/study-cases?search=term&sort=name \
 -H "SC-API-KEY: Bearer <your-api-key>" \
 -H "Content-Type: application/json"
 ```

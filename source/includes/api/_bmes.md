@@ -210,6 +210,7 @@ Available filters:
 | Field         | Description           | Type
 | ------------- |:-------------:| -----:|
 | sort          | Sort json response by specific attributes (name, created_at, updated_at) | Text
+| search        | Search in name and description | Text
 
 
 > To obtain all business model elements sorted by name:
@@ -222,6 +223,14 @@ curl -X GET http://localhost:3000/business-model-elements?sort=name \
 
 ```shell
 curl -X GET http://localhost:3000/business-model-elements?sort=-name \
+-H "SC-API-KEY: Bearer <your-api-key>" \
+-H "Content-Type: application/json"
+```
+
+> To search business model elements sorted by name:
+
+```shell
+curl -X GET http://localhost:3000/business-model-elements?search=term&sort=name \
 -H "SC-API-KEY: Bearer <your-api-key>" \
 -H "Content-Type: application/json"
 ```

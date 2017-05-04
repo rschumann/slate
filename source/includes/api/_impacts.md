@@ -300,6 +300,7 @@ Available filters:
 | Field         | Description           | Type
 | ------------- |:-------------:| -----:|
 | sort          | Sort json response by specific attributes (name, created_at, updated_at) | Text
+| search        | Search in name and description | Text
 
 
 > To obtain all impacts sorted by name:
@@ -312,6 +313,14 @@ curl -X GET http://localhost:3000/impacts?sort=name \
 
 ```shell
 curl -X GET http://localhost:3000/impacts?sort=-name \
+-H "SC-API-KEY: Bearer <your-api-key>" \
+-H "Content-Type: application/json"
+```
+
+> To search impacts sorted by name:
+
+```shell
+curl -X GET http://localhost:3000/impacts?search=term&sort=name \
 -H "SC-API-KEY: Bearer <your-api-key>" \
 -H "Content-Type: application/json"
 ```

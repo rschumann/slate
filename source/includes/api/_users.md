@@ -307,6 +307,7 @@ Available filters:
 | Field         | Description           | Type
 | ------------- |:-------------:| -----:|
 | sort          | Sort json response by specific attributes (name, created_at, updated_at) | Text
+| search        | Search in name and nickname | Text
 
 
 > To obtain all users sorted by name:
@@ -319,6 +320,14 @@ curl -X GET http://localhost:3000/users?sort=name \
 
 ```shell
 curl -X GET http://localhost:3000/users?sort=-name \
+-H "SC-API-KEY: Bearer <your-api-key>" \
+-H "Content-Type: application/json"
+```
+
+> To search users sorted by name:
+
+```shell
+curl -X GET http://localhost:3000/users?search=term&sort=-name \
 -H "SC-API-KEY: Bearer <your-api-key>" \
 -H "Content-Type: application/json"
 ```

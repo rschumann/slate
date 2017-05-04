@@ -321,7 +321,16 @@ Available filters:
 | ------------- |:-------------:| -----:|
 | type          | Filter by specific type (Solution, Bme, Impact, Enabling, Timing)        | Text
 | sort          | Sort json response by specific attributes (name, created_at, updated_at) | Text
+| search        | Search in name and description | Text
 
+
+> To search categories:
+
+```shell
+curl -X GET http://localhost:3000/categories?search=term \
+-H "SC-API-KEY: Bearer <your-api-key>" \
+-H "Content-Type: application/json"
+```
 
 > To obtain all categories in the parent - children structure:
 

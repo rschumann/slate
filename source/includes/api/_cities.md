@@ -225,6 +225,8 @@ Available filters:
 | Field         | Description           | Type
 | ------------- |:-------------:| -----:|
 | sort          | Sort json response by specific attributes (name, created_at, updated_at) | Text
+| search        | Search in name | Text
+| country       | Search in country | Integer
 
 
 > To obtain all cities sorted by name:
@@ -237,6 +239,22 @@ curl -X GET http://localhost:3000/cities?sort=name \
 
 ```shell
 curl -X GET http://localhost:3000/cities?sort=-name \
+-H "SC-API-KEY: Bearer <your-api-key>" \
+-H "Content-Type: application/json"
+```
+
+> To search cities sorted by name:
+
+```shell
+curl -X GET http://localhost:3000/cities?search=term&sort=name \
+-H "SC-API-KEY: Bearer <your-api-key>" \
+-H "Content-Type: application/json"
+```
+
+> To filter cities by country sorted by name:
+
+```shell
+curl -X GET http://localhost:3000/cities?country=<country-id>&sort=name \
 -H "SC-API-KEY: Bearer <your-api-key>" \
 -H "Content-Type: application/json"
 ```
